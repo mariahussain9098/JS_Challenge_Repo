@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Name : Maria Muhammad Hussain</h1>
+        <h2>Roll No : WMA-130798</h2>
+        <script>
+            // -----------------------------------Question # 1--------------------------------------------------
+
+            // Qusetion # 1
+            console.log('============Question #1: Result =========')
+
+            function adjacentElementsProduct(inputArray) {
+                var arr = inputArray;
+                var x = 0;
+                var y = 0;
+                var p = 0;
+                for (var i = 0; i < arr.length; i++) {
+                    x = arr[i];
+                    y = arr[i + 1];
+                    if (x * y > p) {
+                        p = x * y;
+                    };
+                };
+                return p;
+            };
+
+
+            var Result = adjacentElementsProduct([3,5, 7, 9, 2]);
+
+            console.log(Result)
+
+            // -----------------------------------Question # 2--------------------------------------------------
+
+            // Qusetion # 2
+            console.log('============Question #2: Result =========')
+
+            var twoSum = function (nums, target) {
+                for (let i = 0; i < nums.length; i++) {
+                    for (let j = i + 1; j < nums.length; j++) {
+                        if (nums[i] + nums[j] == target) {
+                            return [i, j]
+                        }
+                    }
+                }
+            };
+
+            console.log('The index numbers of two values of array for target number are :')
+            console.log(twoSum([15, 7, 11, 2], 9))
+            // console.log(twoSum([3, 2, 4], 6))
+
+
+
+
+            // -----------------------------------Question # 3--------------------------------------------------
+
+            // Question # 3
+
+            console.log('============Question #3: Result =========')
+
+
+            let string = "Welcome to this Javascript Guide!";
+            let reverString = reverseWords(string, "");
+            // console.log(reverString);
+
+            let output = reverseWords(reverString, " ");
+            console.log(output);
+
+            function reverseWords(string, seperator) {
+                return string.split(seperator).reverse().join(seperator);
+            }
+
+
+
+            // -----------------------------------Question # 4--------------------------------------------------
+
+            // Question # 4
+            console.log('============Question #4: Result =========')
+
+            var library = [
+                {
+                    author: 'Bill Gates',
+                    title: 'The Road Ahead',
+                    readingStatus: true
+                },
+                {
+                    author: 'Steve Jobs',
+                    title: 'Walter Isaacson',
+                    readingStatus: true
+                },
+                {
+                    author: 'Suzanne Collins',
+                    title: 'Mockingjay:The Final Book of The Hunger Games',
+                    readingStatus: false
+                },
+            ];
+            for (let i = 0; i < library.length; i++) {
+                if (library[i].readingStatus == true) {
+                    console.log(`Reading Status of Book ${library[i].title} is :  TRUE`)
+                    // alert(`Reading Status of Book ${library[i].title} is :  TRUE`)
+                }
+                else {
+                    console.log(`Reading Status of Book ${library[i].title} is :   FALSE`)
+                    // alert(`Reading Status of Book ${library[i].title} is :   FALSE`)
+                }
+            }
+
+
+
+            // -----------------------------------Question # 5--------------------------------------------------
+
+            // Question # 5
+
+            console.log('============Question #5: Result =========')
+
+
+            function amountIntocoins(amount, coins) {
+                if (amount === 0) {
+                    return [];
+                } else {
+                    if (amount >= coins[0]) {
+                        left = (amount - coins[0]);
+
+                        return [coins[0]].concat(amountIntocoins(left, coins));
+                    } else {
+                        coins.shift();
+                        return amountIntocoins(amount, coins);
+                    }
+                }
+            }
+
+            console.log(amountIntocoins(46, [1000, 500, 100, 50, 20, 10, 5, 2, 1]));
+
+
+
+        </script>
